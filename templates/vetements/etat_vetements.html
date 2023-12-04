@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Statistiques des vêtements</title>
+{% endblock %}
+
+{% block body %}
+    <div class="global-card">
+        <h2>Statistiques des vêtements</h2>
+
+        <p>Nombre total de vêtements enregistrés : {{ total_vetements }}</p>
+
+        <div class="card-container">
+            {% for categorie, data in categories.items() %}
+                <div class="category-card card">
+                    <div class="card-body">
+                        <h3>{{ categorie }}</h3>
+                        <p>Nombre de vêtements : {{ data['count_items'] }}</p>
+                        <p>Valeur totale de la catégorie : {{ data['valeur_totale_categorie'] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #565e64; /* Couleur de fond bleu */
+    color: #ffffff; /* Couleur du texte blanc pour contraster avec le fond */
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #8e44ad;
+    background-color: #ecf0f1;
+    margin-top: 20px;
+}
+
+tr {
+    height: 40px;
+}
+
+a {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    background-color: #cfe2ff; /* Couleur de fond grise */
+    border: 1px solid #666666; /* Bordure grise légèrement plus foncée */
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 0; /* Coins droits */
+    transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+}
+
+a:hover {
+    background-color: #2980b9; /* Couleur de fond légèrement plus foncée au survol */
+}
+
+.flashes {
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.alert-warning {
+    background-color: rgba(255, 197, 197, 1);
+    color: #c0392b;
+}
+
+.alert-success {
+    background-color: #2ecc71;
+    color: #27ae60;
+}
+
+form {
+    margin-left: 20px;
+}
+
+title {
+    margin-left: 60px;
+    font-size: 24px;
+}
+
+h2 {
+    margin-left: 40px;
+}
+
+h1 {
+    margin-left: 60px;
+}
+
+h3 {
+    margin-left: 80px;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espacement égal entre les cartes */
+}
+
+.card {
+    flex: 0 0 calc(30% - 20px); /* Largeur de chaque carte avec espacement */
+    margin-bottom: 20px; /* Espacement entre les lignes de cartes */
+}
+.card h2 {
+    margin-left: 40px;
+}
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.card tr {
+    height: 40px;
+}
+
+.card a {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    background-color: #cfe2ff;
+    border: 1px solid #666666;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 0;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #2980b9;
+}
+
+.card .flashes {
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.card .alert-warning {
+    background-color: rgba(255, 197, 197, 1);
+    color: #c0392b;
+}
+
+.card .alert-success {
+    background-color: #2ecc71;
+    color: #27ae60;
+}
+
+.card form {
+    margin-left: 20px;
+}
+
+.card .title {
+    margin-left: 60px;
+    font-size: 24px;
+}
+
+.card h2 {
+    margin-left: 40px;
+}
+
+.card h1 {
+    margin-left: 60px;
+}
+
+.card h3 {
+    margin-left: 80px;
+}
+.statistics-card {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.global-card {
+    width: 80%;
+    background-color: #ecf0f1;
+    margin: 50px auto 0; /* Ajoutez une marge supérieure de 50px pour éviter le chevauchement avec la barre de navigation */
+    border: 1px solid #8e44ad;
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px;
+    padding-top: 30px; /* Ajoutez une marge supérieure pour déplacer le contenu vers le bas */
+}
+
+.global-card h2 {
+    margin-left: 40px;
+}
+
+
+.category-card {
+    margin-top: 10px; /* Ajoutez un espacement entre les cartes de catégorie */
+    background-color: lightblue; /* Couleur de fond différente pour les cartes de catégorie */
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.category-card h3 {
+    margin-left: 40px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Couleur de fond de la barre de navigation */
+    padding: 10px;
+    color: #fff; /* Couleur du texte */
+}
+
+.menu select {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: lightslategrey; /* Couleur de fond de la liste déroulante */
+    color: lightgrey; /* Couleur du texte de la liste déroulante */
+    cursor: pointer;
+}
+
+/* Style pour la section des messages flash */
+.flash-messages {
+    margin-top: 50px; /* Ajustez cette valeur en fonction de la hauteur de votre barre de navigation */
+}
+
+/* Style pour déplacer la barre de navigation vers le bas en fonction du message flash */
+.menu.flash {
+    top: 40px; /* Ajustez cette valeur en fonction de la hauteur de votre message flash */
+}

@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Modifier un vetement</title>
+{% endblock %}
+
+{% block body %}
+    <h2>Modifier un vetement</h2>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+    <form method="POST" action="/vetements/edit">
+        <input type="hidden" name="vetement_id" value="{{ vetement.Vetement_id }}">
+        <fieldset>
+            <legend>Modifier un vetement</legend>
+            <label>En stock</label><br>
+            <select name="stock" required>
+                <option value="oui" {% if vetement.En_stock == 'oui' %}selected{% endif %}>Oui</option>
+                <option value="non" {% if vetement.En_stock == 'non' %}selected{% endif %}>Non</option>
+            </select><br>
+            <label>Offert ou collecté</label><br>
+            <select name="offert" required>
+                <option value="offert" {% if vetement.Offert_collecte == 'offert' %}selected{% endif %}>Offert</option>
+                <option value="collecte" {% if vetement.Offert_collecte == 'collecte' %}selected{% endif %}>Collecté</option>
+            </select><br>
+            <label>Poids</label><br>
+            <input type="number" name="poids" value="{{ vetement.Poids }}" required><br>
+            <label>Categorie</label><br>
+            <select name="categorie" required>
+                <option value="{{ vetement.Categorie_ID }}">{{ vetement.Nom_categorie }}</option>
+                {% for type2 in categorie %}
+                    <option value="{{ type2.Categorie_ID }}"> {{ type2.Nom_categorie }} </option>
+                {% endfor %}
+            </select><br>
+            <label>Collecte</label><br>
+            <select name="collecte" required>
+                <option value="{{ vetement.Collecte_id }}">{{ vetement.Date_collecte }}</option>
+                {% for type3 in collecte %}
+                    <option value="{{ type3.Collecte_id }}"> {{ type3.Date_collecte }} </option>
+                {% endfor %}
+            </select><br>
+            <label>Vente</label><br>
+            <select name="vente" required>
+                <option value="{{ vetement.Vente_id }}">{{ vetement.Date_vente }}</option>
+                {% for vente in ventes %}
+                    <option value="{{ vente.Vente_id }}"> {{ vente.Date_vente }} </option>
+                {% endfor %}
+            </select><br>
+            <input type="submit" value="Modifier" name="Valider">
+        </fieldset>
+    </form>
+{% endblock %}

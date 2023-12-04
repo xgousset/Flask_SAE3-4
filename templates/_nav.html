@@ -1,0 +1,15 @@
+<nav class="menu">
+    <select id="menuDropdown" onchange="window.location.href=this.value;">
+        <option value="">Vetement (Xavier GOUSSET)</option>
+        <option value="/vetements/show">Afficher les vêtements</option>
+        <option value="/vetements/add">Ajouter un nouveau vêtement</option>
+        <option value="/vetements/etat">Etat des vetements</option>
+    </select>
+</nav>
+<div class="flash-messages">
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+</div>

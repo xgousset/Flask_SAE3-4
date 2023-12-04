@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>afficher les vetements</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Vetements</h1>
+    <a href="/vetements/add" >ajouter un vetement</a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>id</th><th>en stock</th><th>offert</th><th>poids en gramme</th><th>vente</th><th>categorie</th><th>collecte</th><th>operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if vetements | length >= 1 %}
+                {% for ligne in vetements %}
+                    <tr>
+                        <td>{{ ligne.Vetement_id }}</td>
+                        <td>{{ ligne.En_stock }}</td>
+                        <td>{{ ligne.Offert_collecte }}</td>
+                        <td>{{ ligne.Poids }}</td>
+                        <td>{{ ligne.Date_vente }}</td>
+                        <td>{{ ligne.Nom_categorie }}</td>
+                        <td>{{ ligne.Date_collecte }}</td>
+                        <td>
+                            <a href="/vetements/edit?id={{ ligne.Vetement_id }}" data-method="get" >editer</a>
+                            <a href="/vetements/delete?id={{ ligne.Vetement_id }}" data-method="post" >supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>
+                        pas de vetements
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+<script src="/static/bootstrap/js/bootstrap.js"></script>

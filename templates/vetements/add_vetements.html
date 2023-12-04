@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>ajouter un vetement</title>
+{% endblock %}
+
+{% block body %}
+    <h2>ajout d'un vetement</h2>
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form method="POST" action="/vetements/add" >
+        <fieldset>
+            <legend> ajouter un vetement</legend>
+            <label>Offert ou collecté</label><br>
+            <select name="offert" required>
+                <option value="Offert">Offert</option>
+                <option value="collecté">Collecté</option>
+            </select><br>
+            <label for="poids">poids</label><br>
+            <input id="poids" type="number" name="poids" size="18" value="" placeholder="Saisir le poids du vetement" required><br>
+            <label for="Categorie">categorie</label><br>
+            <select name="Categorie_ID" required>
+                <option value="">sélectionnez la catégorie du vêtement</option>
+                {% for type2 in categorie %}
+                    <option value="{{ type2.Categorie_ID }}"> {{ type2.Nom_categorie }} </option>
+                {% endfor %}
+            </select><br>
+            <label for="Collecte">collecte</label><br>
+            <select name="Collecte_id" required>
+                <option value="">sélectionnez la collecte de provenance du vêtement</option>
+                {% for type3 in collecte %}
+                    <option value="{{ type3.Collecte_id }}"> {{ type3.Date_collecte }} </option>
+                {% endfor %}
+            </select><br>
+            <input type="submit" value="Creer" name="Valider" >
+        </fieldset>
+    </form>
+{% endblock %}
